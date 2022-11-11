@@ -3,8 +3,8 @@
 #include "catch.hpp"
 
 extern "C" {
-#include "btree.h"
-#include "linked_list.h"
+  #include "btree.h"
+  #include "linked_list.h"
 }
 
 // See Catch2's documentation:
@@ -20,7 +20,7 @@ TEST_CASE("linked_list") {
     sum = sum_squares(ns);
     REQUIRE(sum == 55);
     free_list(ns);
-    // dangling pointer we need to set it to null
+  // dangling pointer we need to set it to null
     ns = NULL;
 
     sum = sum_squares(ns);
@@ -159,11 +159,11 @@ TEST_CASE("btree") {
   REQUIRE(Contains(7, root) == 1);
   REQUIRE(Contains(12, root) == 1);
   REQUIRE(Contains(30, root) == 1);
-  REQUIRE(Contains(25, root) == 1);
+REQUIRE(Contains(25, root) == 1);
   REQUIRE(Contains(40, root) == 1);
   REQUIRE(Contains(45, root) == 0);
   REQUIRE(Contains(42, root) == 0);
-  REQUIRE(Contains(16, root) == 1);
+REQUIRE(Contains(16, root) == 1);
 
   REQUIRE(Full(root) == 1);
 
